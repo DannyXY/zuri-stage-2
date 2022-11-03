@@ -5,7 +5,7 @@ require("dotenv").config();
 var bodyParser = require("body-parser");
 const EnumType = {
   addition: "+",
-  substraction: "-",
+  subtraction: "-",
   multiplication: "*",
 };
 
@@ -21,7 +21,6 @@ server.use(urlencodedParser);
 
 server.post("/details", (req, res) => {
   const { operation_type, x, y } = req.body;
-
   if (!EnumType[operation_type]) {
     res.status(405).json({
       success: false,
