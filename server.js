@@ -18,6 +18,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 server.use(jsonParser);
 server.use(urlencodedParser);
+console.log(EnumType["subtraction"]);
 
 server.post("/details", (req, res) => {
   const { operation_type, x, y } = req.body;
@@ -37,7 +38,7 @@ server.post("/details", (req, res) => {
     }
     const data = {
       slackUsername: "dannyx",
-      operation_type: EnumType.operation_type,
+      operation_type: operation_type,
       result: result,
     };
 
