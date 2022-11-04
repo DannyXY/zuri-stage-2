@@ -20,7 +20,7 @@ server.use(jsonParser);
 server.use(urlencodedParser);
 console.log(EnumType["subtraction"]);
 
-server.post("/details", (req, res) => {
+server.post("/math", (req, res) => {
   const { operation_type, x, y } = req.body;
   if (!EnumType[operation_type]) {
     res.status(405).json({
